@@ -636,9 +636,6 @@ def test_should_use_real_time():
     expected_frozen_gmt = (2015, 3, 5, 0, 0, 0, 3, 64, -1)
     expected_clock = 0
 
-    from freezegun import api
-    api.call_stack_inspection_limit = 100  # just to increase coverage
-
     with freeze_time(frozen):
         assert time.time() == expected_frozen
         # assert time.localtime() == expected_frozen_local
